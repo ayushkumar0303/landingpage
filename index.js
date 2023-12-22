@@ -5,7 +5,6 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import {UserInput} from './database.js'
-console.log(__dirname);
 
 
 const app = express();
@@ -22,7 +21,7 @@ app.post("/submit", async(req, res) => {
   const {name, email, message} =req.body;
   const user = await UserInput(name, email,message);
   res.send(__dirname);
-  // res.sendFile(__dirname + "/public/thankyouPage.html");
+  res.sendFile(__dirname + "/public/thankyouPage.html");
 });
 app.post("/back", async(req, res) => {
   res.redirect("/");

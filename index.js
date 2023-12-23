@@ -19,7 +19,7 @@ res.sendFile(__dirname + "/public/index.html");
 app.post("/submit", async(req, res) => {
   const {name, email, message} =req.body;
   await UserInput(name, email,message);
-  res.sendFile(__dirname + "/public/thankyouPage.html");
+  res.sendFile("https://landingpg1.onrender.com/public/thankyouPage.html");
 });
 app.post("/back", async(req, res) => {
   res.redirect("/");

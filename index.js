@@ -19,8 +19,7 @@ res.sendFile(__dirname + "/public/index.html");
 
 app.post("/submit", async(req, res) => {
   const {name, email, message} =req.body;
-  const user = await UserInput(name, email,message);
-  res.send(__dirname);
+  await UserInput(name, email,message);
   res.sendFile(__dirname + "/public/thankyouPage.html");
 });
 app.post("/back", async(req, res) => {
